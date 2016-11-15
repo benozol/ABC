@@ -150,9 +150,9 @@ object AbcParser {
                   println(e)
           }
       else
-          parser.parseCaseDefinition (Source.fromInputStream(System.in).mkString("", "", "")) match {
-              case parser.Success(cd, _) =>
-                  println(cd.unparse())
+          parser.parseClause (Source.fromInputStream(System.in).mkString("", "", "")) match {
+              case parser.Success(clause, _) =>
+                  println(clause.unparse())
               case e:parser.NoSuccess =>
                   println(e)
           }
